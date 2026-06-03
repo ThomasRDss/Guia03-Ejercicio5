@@ -11,10 +11,14 @@ public class ArchivoDeVideo extends ArchivoMultimedia {
         this.formato = formato;
     }
 
-    public String obtenerResolucion(){
-        return resolucion.obtenerResolucion();
+    public boolean isFullHD(){
+        return resolucion.isFullHD();
     }
 
+    public String obtenerResolucion(){
+       return resolucion.obtenerResolucion();
+    }
+    
     @Override
     public String toString() {
         return "ArchivoDeVideo{" + "resolucion=" + resolucion + ", formato=" + formato + '}';

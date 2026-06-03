@@ -10,13 +10,17 @@ public class Resolucion {
         this.alto = alto;
     }
     
-    public String obtenerResolucion(){
-        return ancho + "x" + alto;
+    public boolean isFullHD(){
+        return (ancho == 1920 && alto == 1080);
     }
 
+    public String obtenerResolucion(){
+        return toString();
+    }
+    
     @Override
     public String toString() {
-        return "Resolucion{" + "ancho=" + ancho + ", alto=" + alto + '}';
+        return ancho + "x" + alto;
     }
     
 }

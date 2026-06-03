@@ -36,12 +36,11 @@ public class Computadora {
     }
     
     public void cifrarArchivos(){
-        String codificacionRequerida = "UTF-8";
         int i = 0;
         while(i < archivos.size()) {
             if(archivos.get(i) instanceof ArchivoDeTexto){
                 ArchivoDeTexto archivoTexto = (ArchivoDeTexto) archivos.get(i);
-                if(archivoTexto.getCodificacion().equalsIgnoreCase(codificacionRequerida))
+                if(archivoTexto.isUTF8())
                     archivoTexto.cifrarContenido();
             }
             i++;
@@ -65,11 +64,10 @@ public class Computadora {
     
     public ArrayList<ArchivoDeVideo> videosFullHD(){
         ArrayList<ArchivoDeVideo> listaARetornar = new ArrayList<>();
-        String fullHD = "1920x1080";
         for (Archivo archivo : archivos) {
             if(archivo instanceof ArchivoDeVideo){
                 ArchivoDeVideo archivoVideo = (ArchivoDeVideo) archivo;
-                if(archivoVideo.obtenerResolucion().equalsIgnoreCase(fullHD)){
+                if(archivoVideo.isFullHD()){
                     listaARetornar.add(archivoVideo);
                 }
             }

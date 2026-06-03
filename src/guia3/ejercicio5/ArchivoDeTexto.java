@@ -9,8 +9,8 @@ public class ArchivoDeTexto extends Archivo {
         this.codificacion = codificacion;
     }
 
-    public String getCodificacion() {
-        return codificacion;
+    public boolean isUTF8() {
+        return codificacion.equalsIgnoreCase("UTF-8");
     }
 
     
